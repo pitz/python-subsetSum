@@ -19,6 +19,30 @@ def possuiSubsetSum(listaElementos, numeroElementos, valorASerEncontrado) :
   return False
 
 
+def possuiSubsetSumComProgramacaoDinamica(listaElementos, numeroElementos, valorASerEncontrado): 
+  # Criando uma tabela dinâmica
+  subLista =([[False for i in range(valorASerEncontrado + 1)] for i in range(numeroElementos + 1)]) 
+
+  for i in range(numeroElementos + 1): 
+    # Seta tabela dinamica para True quando o valor a ser encontrado for 0.
+    subLista[i][0] = True
+        
+    for i in range(1, valorASerEncontrado + 1): 
+      subLista[0][i]= False
+            
+    # Usando abordagem Botton Up 
+    for i in range(1, numeroElementos + 1): 
+      for j in range(1, valorASerEncontrado + 1): 
+        if (j<listaElementos[i-1]): 
+          subLista[i][j] = subLista[i-1][j]
+
+        if (j>= listaElementos[i-1]):
+          resultado = (subLista[i-1][j] or subLista[i - 1][j-listaElementos[i-1]]) 
+          subLista[i][j] = resultado
+ 
+  return subLista[numeroElementos][valorASerEncontrado]
+
+
 def testesUnitarios(listaElementos):
   print(">> Iniciando testes unitários...")
 

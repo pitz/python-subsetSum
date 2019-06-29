@@ -1,6 +1,12 @@
-## SubsetSum com algoritmo de força bruta
+## SubsetSum em Python
 
-Esse repositório apresenta um algoritmo de força bruta desenvolvido em Python a fim de solucionar o problema de decisão para o SubsetSum. O algoritmo desenvolvido apresenta a complexidade presente neste problema NP-Completo.
+Esse repositório apresenta dois algoritmos para resolver o problema de decisão SubsetSum.
+
+### Algoritmo de Força Bruta
+O algoritmo possuiSubsetSum() como o próprio nome apresenta, define uma solução de força bruta para o problema de decisão do algoritmo SubsetSum.
+
+### Algoritmo com Programação Dinâmica
+O algoritmo possuiSubsetSumComProgramacaoDinamica() como o próprio nome apresenta, define uma solução utilizando programação dinâmica para o problema de decisão do algoritmo SubsetSum.
 
 ### O problema
 
